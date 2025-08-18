@@ -1,0 +1,22 @@
+.notification {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.notification.success {
+    background-color: #4CAF50 !important;
+    color: white;
+}
+
+.notification.error {
+    background-color: #F44336 !important;
+    color: white;
+}
+
+.notification.warning {
+    background-color: #FFC107 !important;
+    color: black;
+}
