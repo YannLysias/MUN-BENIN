@@ -18,13 +18,13 @@
             width: 380px;
             height: 260px;
             border: 2px solid #000;
-            background-color: #e7f2ea;
+            background-color: #c2814bff;
             border-radius: 5px;
             padding: 10px;
             position: relative;
-            color: #000;
+            color: #fff;
             box-sizing: border-box;
-            /* background-image: url('img/Africa.png'); */
+            /* background-image: url('assets/img/logo.jpg'); */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -131,14 +131,14 @@
     <div class="card">
         <!-- Nom du parti et titre de la carte d'adhésion -->
         <div class="header">
-            <div class="title"> <img src="assets/img/mpa-remove.png" alt="Image à gauche" class="image" ></div>
+            <div class="title"> <img src="assets/img/MUN_BENIN 2.png" alt="Image à gauche" class="image" ></div>
 
                 @if ($member->sexe === 'Feminin')
                     <!-- Afficher une image spécifique pour les utilisateurs de sexe féminin -->
-                    <div class="title"> <img src="img/fille.jpg" alt="Image à gauche" class="photo"> Mouvement des Peuples Africains</div>
+                    <div class="title"> <img src="img/fille.jpg" alt="Image à gauche" class="photo"> Mouvement d'Unité Nationale</div>
                 @else
                     <!-- Afficher une image par défaut ou un avatar -->
-                    <div class="title"> <img src="img/images.png" alt="Image à droit" class="photo"> Mouvement des Peuples Africains</div>
+                    <div class="title"> <img src="img/images.png" alt="Image à droit" class="photo"> Mouvement d'Unité Nationale</div>
                 @endif
 
             <div class="line"></div>
@@ -175,7 +175,7 @@
             <img src="img/drapeaux.png" alt="Drapeau" style="width: 40px; height: 40px;">
             <div class="title">RÉPUBLIQUE DU BÉNIN</div>
             <p>FRATERNITÉ * TRAVAIL * JUSTICE</p>
-            <p>Mouvement des Peuples Africains</p>
+            <p>Mouvement d'Unité Nationale</p>
         </div>
 
         <div class="content">

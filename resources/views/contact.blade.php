@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <link rel="icon" href="/assets/img/mpa.jpeg">
+  <link rel="icon" href="/asset/img/logo.jpg">
 
   <title>MPA Bénin </title>
   <meta content="" name="description">
@@ -78,18 +78,18 @@
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Adresse:</h4>
+                <h4>Adresse: </h4>Abomey-Calavi Bénin
                 <p> </p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
+                <h4>Email:</h4> mun-contact@benin.bj
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Téléphone</h4> 000 000 000
+                <h4>Téléphone</h4> +229 01 6305 3905
                 <p> </p>
               </div>
 
@@ -174,7 +174,7 @@
 
       <div class="text-center">
         <div class="copyright">
-          &copy; 2024 Mouvement des Peuples Africains  <strong></strong>
+          &copy; 2025 Mouvement d'Unité Nationale<strong></strong>
         </div>
       </div>
 

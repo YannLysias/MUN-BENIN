@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <link rel="icon" href="/assets/img/mpa.jpeg">
-
-  <title>MPA Bénin </title>
+    <title>MUN Bénin </title>
+    
+    <link rel="icon" href="/asset/img/logo.jpg">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -246,7 +245,7 @@
 
         <div class="text-center">
             <div class="copyright">
-            &copy; 2024 Mouvement des Peuples Africains  <strong></strong>
+            &copy; 2025 Mouvement d'Unité Nationale  <strong></strong>
             </div>
         </div>
     </div>

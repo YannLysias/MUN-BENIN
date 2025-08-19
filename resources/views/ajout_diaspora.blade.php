@@ -141,7 +141,7 @@
 
       <div class="text-center">
         <div class="copyright">
-          &copy; 2024 Mouvement des Peuples Africains <strong></strong>
+          &copy; 2025 Mouvement d'Unité Nationale <strong></strong>
         </div>
       </div>
     </div>
