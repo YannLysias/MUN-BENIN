@@ -203,11 +203,9 @@
             <label class="col-form-label col-md-3 col-sm-3 label-align">Departement<span class="required">*</span></label>
             <div class="col-md-6 col-sm-6">
             <select id="departement_id" name="departement_id" class="form-control forms-control-lg" required>
-                <option value=""  disabled selected>Choisissez un departement
-                </option>
+                <option value=""  disabled selected>Choisissez un departement</option>
                 @foreach ($departements as $departement)
-                <option value="{{$departement->id}}">{{$departement->libelle}}
-                </option>
+                <option value="{{$departement->id}}">{{$departement->libelle}}</option>
                 @endforeach
                 @error('departement_id')
                 <div class="d-block text-danger">{{$message}}</div>
@@ -310,7 +308,7 @@
             <!-- footer content -->
             <footer>
                 <div class="pull-right">
-                    &copy; 2024 Mouvement des Peuples Africains
+                    &copy; 2025 Mouvement d'Unité Nationale
                 </div>
                 <div class="clearfix"></div>
             </footer>

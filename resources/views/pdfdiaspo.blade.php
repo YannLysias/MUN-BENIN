@@ -10,10 +10,10 @@
     <title>MUN Bénin </title>
     
     <link rel="icon" href="/asset/img/logo.jpg">
-    
+
     <style>
         h2 {
-            color: #0b5e1e;
+            color: #fd7e14;
             text-decoration: underline;
         }
 
@@ -26,7 +26,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
         }
         .styled-table thead tr {
-            background-color: #0b5e1e;
+            background-color: #fd7e14;
             color: #ffffff;
             text-align: left;
         }
@@ -44,7 +44,7 @@
         }
 
         .styled-table tbody tr:last-of-type {
-            border-bottom: 2px solid #0b5e1e;
+            border-bottom: 2px solid #fd7e14;
         }
 
     </style>
@@ -72,7 +72,7 @@
                                 <div class="col-md-12 col-sm-12 ">
                                     <div class="x_panel">
                                         <div class="x_title">
-                                            <h2 class="bg-danger text-dark mb-5">Mouvement des Peuples Africains (MPA)</h2>
+                                            <h2 class="bg-danger text-dark mb-5">Mouvement d'Unité Nationale (MUN)</h2>
                                             <ul class="nav navbar-right panel_toolbox">
                                                 <ul class="nav navbar-right panel_toolbox">
 

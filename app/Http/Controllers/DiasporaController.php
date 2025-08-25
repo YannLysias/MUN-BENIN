@@ -28,6 +28,30 @@ class DiasporaController extends Controller
      * Show the form for creating a new resource.
      */
 
+    public function showFormCode()
+    {
+        return view('code_diaspora'); // page où l’adhérent entre son code
+    }
+
+    public function diaspora(Request $request)
+    {
+        // Validation du champ code
+        $request->validate([
+            'code' => 'required|string'
+        ]);
+
+        // Code attendu pour la diaspora
+        $departementCode = 'MUN-986-DSP';
+
+        if ($request->code !== $departementCode) {
+            return back()->with('error', '❌ Code invalide, vérifiez et réessayez.');
+        }
+
+        return redirect()->route('diaspora.create')
+                        ->with('success', '✅ Code validé avec succès.');
+    }
+
+
      public function diasporaPDF()
      {
              $options = new Options();
@@ -79,14 +103,10 @@ class DiasporaController extends Controller
             'nom' => 'required|max:255',
             'prenom' => 'required|max:255',
             'sexe' => 'required|max:255',
-            'whatsap' => 'nullable|max:255',
             'telephone' => 'required|unique:diasporas,telephone|max:255',
             'email' => 'required|email|unique:users,email',
             'profession' => 'required|max:255',
             'pays' => 'required|max:255',
-
-
-
         ]);
 
         $admin = Diaspora::create([
@@ -99,7 +119,6 @@ class DiasporaController extends Controller
             'profession' => $request->profession,
             'categorie' => 'Diaspora',
             'pays' => $request->pays,
-            'whatsap' => $request->whatsap,
 
         ]);
 

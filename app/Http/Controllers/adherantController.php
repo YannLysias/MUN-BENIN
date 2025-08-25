@@ -62,12 +62,15 @@ class adherantController extends Controller
 
     public function generatePDF()
     {
+        
+        
+
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
 
         $dompdf = new Dompdf($options);
         $dompdf->setBasePath(public_path());
-
+        
         // Récupérez l'utilisateur connecté
         $user = Auth::user();
 
@@ -88,7 +91,6 @@ class adherantController extends Controller
                              ->orderBy('nom') // Tri par ordre alphabétique du nom
                              ->get();
         }
-
         // Générez le contenu HTML du tableau
         $html = view('pdf', compact('adherants'))->render();
 

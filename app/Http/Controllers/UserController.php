@@ -125,6 +125,7 @@ class UserController extends Controller
 
     public function coordonateurPDF()
     {
+        dd('test');
 
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
@@ -290,7 +291,7 @@ class UserController extends Controller
         }
 
         }
-
+        $path_photo_convert_to_table = null;
         if ($request->hasFile('photo')) {
             $path_photo = $request->file('photo')->store('public/photos');
 
@@ -298,15 +299,15 @@ class UserController extends Controller
 
             $photo_name = isset($path_photo_convert_to_table[2]) ? $path_photo_convert_to_table[2] : null;
 
-            $data = [
-                'photo' => $photo_name,
-            ];
+            // $data = [
+            //     'photo' => $photo_name,
+            // ];
 
             // Enregistrez $data dans votre modèle, par exemple:
             // ModelName::create($data);
-        } else {
-            // Gérer le cas où aucune photo n'a été téléchargée
-            $photo_name = null;
+        // } else {
+        //     // Gérer le cas où aucune photo n'a été téléchargée
+        //     $photo_name = null;
         }
 
 

@@ -27,30 +27,20 @@
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-
-
             <div class="clearfix"></div>
-
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-
               </div>
               <div class="profile_info">
 
               </div>
             </div>
-            <!-- /menu profile quick info -->
 
             <br />
 
             <!-- sidebar menu -->
             @include('layouts.sidebar')
-
-        <!-- top navigation -->
-
-        <!-- /top navigation -->
-
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="">
@@ -186,7 +176,6 @@
                                     <div class="col-lg-9 col-md-8">{{ $user->quartier->arrondissement->commune->libelle }}</div>
                                 @endif
                             </div>
-
                             <div class="row">
                               <div class="col-lg-3 col-md-4 label">Arrondissement</div>
                               @if($user->quartier && $user->quartier->arrondissement)
@@ -205,11 +194,8 @@
 
                             <div class="tab-pane fade pt-3" id="profile-change-password">
                               <!-- Change Password Form -->
-
-
                         </div>
                       </div>
-
                     </div>
                   </div>
                 </section>

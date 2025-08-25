@@ -101,7 +101,7 @@
         <!-- footer content -->
         <footer>
             <div class="pull-right">
-                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+                2025 Mouvement d'Unité Nationale
             </div>
             <div class="clearfix"></div>
         </footer>

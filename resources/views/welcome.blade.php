@@ -62,7 +62,7 @@
     <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
       <h1>Mouvement d'Unité <br>Nationale (MUN)</h1>
       <h2>Bienvenue chez vous, bienvenue chez nous !</h2>
-      <a href="/inscrire/create" style="background-color: #fd7e14; border: none;" class="btn-get-started">Adhérer</a>
+      <a href="{{ route('verifier.code.form') }}" style="background-color: #fd7e14; border: none;" class="btn-get-started">Adhérer</a>
     </div>
   </section><!-- End Hero -->
 

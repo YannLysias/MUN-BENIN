@@ -89,7 +89,7 @@
                   @enderror
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-3">
-                  <label for="prenom" class="form-label"><b>Groupe sanguin <strong style="color: #f30606ff;">*</strong></b></label>
+                  <label for="prenom" class="form-label"><b>Groupe sanguin</b></label>
                   <input class="form-control" class='optional' placeholder="Indiquez votre groupe sanguin" name="gsanguin" data-validate-length-range="5,15" type="text" value="{{ old('gsanguin') }}"/>
                 @error('gsanguin')
                 <div class="d-block text-danger">{{$message}}</div>
@@ -132,7 +132,7 @@
               <div class="row">
                 <div class="col-md-6 form-group mt-3">
                   <label for="prenom" class="form-label"><b>Occupation</b></label>
-                  <input class="form-control" class='Occupation' name="occupation" placeholder="Indiquez quelle activité vous pratiquez en ce moment"required data-validate-length-range="5,15" type="text" value="{{ old('occupation') }}" />
+                  <input class="form-control" class='Occupation' name="occupation" placeholder="Indiquez quelle activité vous pratiquez en ce moment" data-validate-length-range="5,15" type="text" value="{{ old('occupation') }}" />
                   @error('profession')
                   <div class="d-block text-danger">{{$message}}</div>
                   @enderror

@@ -91,7 +91,7 @@
 
                     <div class="d-flex justify-content-end">
                         @auth
-                        <a href="{{ route('generate.pdf') }}" class="btn btn-primary btn-print">
+                        <a href="{{ route('generate.pdf') }}" class="btn btn-primary">
                             <i class="fa fa-print"></i> Imprimer
                         </a>
                         @endauth

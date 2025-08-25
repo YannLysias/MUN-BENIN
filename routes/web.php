@@ -42,9 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users-profile', adherantController::class)->only(['show']);
 
     Route::get('/generate-pdf', [adherantController::class, 'generatePDF'])->name('generate.pdf');
-
     Route::get('/diaspora-pdf', [DiasporaController::class, 'diasporaPDF'])->name('diaspora.pdf');
-
     Route::get('/coordonateur-pdf', [UserController::class, 'coordonateurPDF'])->name('coordonateur.pdf');
 
     Route::get('/membre/{id}/carte', [MembreController::class, 'genererCarteAdhesion'])->name('membre.carte');
@@ -65,11 +63,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-}); /*les utilisateurs connecter*/
+});
 
+/*les utilisateurs non connecter*/
 
-
-/* les utilisateur nom connecter*/
     Route::get('/creer-admin', [UserController::class, 'createAdminAccount']);
     // Route::post('/inscrire', [InscrireController::class, 'store'])->name('inscription.store');
     // Route::get('/welcome', [InscrireController::class, 'index'])->name('welcome');
@@ -80,9 +77,14 @@ Route::middleware('auth')->group(function () {
         'index', 'store', 'create', 'update', 'edit'
     ]);
 
-    // Route::resource('contact', ContactController::class );
+    Route::get('/verifier-code', [InscrireController::class, 'showFormCode'])->name('verifier.code.form');
+    Route::post('/verifier-code', [InscrireController::class, 'verifierCode'])->name('verifier.code');
 
-    Route::get('/get-communes/{circonscriptionId}/', [CommuneController::class, 'getCommunes'])->name('get-communes');    Route::get('/get-arrondissements/{communeId}/', [ArrondissementController::class, 'getArrondissements'])->name('get-arrondissements');
+    Route::get('/verifier-diaspo', [DiasporaController::class, 'showFormCode'])->name('verifier.code.diaspo');
+    Route::post('/verifier-diaspo', [DiasporaController::class, 'diaspora'])->name('verifier.diaspo');
+
+    Route::get('/get-communes/{circonscriptionId}/', [CommuneController::class, 'getCommunes'])->name('get-communes');    
+    Route::get('/get-arrondissements/{communeId}/', [ArrondissementController::class, 'getArrondissements'])->name('get-arrondissements');
     Route::get('/get-quartiers/{arrondissementId}/', [QuartierController::class, 'getQuartiers'])->name('get-quartiers');
     Route::get('/get-circonstriptions/{departementId}/', [CirconstriptionController::class, 'getCirconstriptions'])->name('get-circonstriptions');
 

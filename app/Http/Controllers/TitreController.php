@@ -33,16 +33,12 @@ class TitreController extends Controller
     {
         $validateData = $request->validate([
             'libelle' => 'required|max:255',
-           
-
         ]);
         
 
 
         Titre::create([
             'libelle' => $request->libelle,
-            
-        
         ]);
 
         return redirect("/titre");

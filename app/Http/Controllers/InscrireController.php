@@ -15,6 +15,29 @@ use Illuminate\Support\Facades\Storage;
 class InscrireController extends Controller
 {
 
+    public function showFormCode()
+    {
+        return view('code-verification'); // page où l’adhérent entre son code
+    }
+
+    public function verifierCode(Request $request)
+    {
+        $request->validate([
+            'code' => 'required|string'
+        ]);
+
+        $departement = Departement::where('code_dep', $request->code)->first();
+
+        if (!$departement) {
+            return back()->with('error', '❌ Code invalide, vérifiez et réessayez.');
+        }
+
+        // stocker l’ID du département en session
+        session(['departement_id' => $departement->id]);
+
+        return redirect()->route('inscrire.create');
+    }
+
     public function filter(Request $request)
     {
         if ($request->has('departement_id')) {
@@ -65,24 +88,24 @@ class InscrireController extends Controller
 
         $validateData = $request->validate([
             'nom' => 'required|max:255',
-             'prenom' => 'required|max:255',
-             'sexe' => 'required|max:255',
-             'date_naissance' => 'required|max:255',
-             'lieu_naissance' => 'required|max:255',
-             'gsanguin' => 'required|max:255',
-             'diplome' => 'required|max:255',
-             'npi' => 'nullable|max:255',
-             'telephone' => 'required|max:255',
-             'email' => 'nullable|email|unique:users,email',
-             'profession' => 'required|max:255',
-             'commune_id' =>  'required|max:255',
-             'whatsap' => 'nullable|max:255',
-             'occupation' => 'nullable|max:255',
-             'circonscription_id' =>  'required|max:255',
-             'departement_id' => 'required|max:255',
-             'arrondissement_id' => 'required|max:255',
-             'quartier_id' => 'required|max:255',
-         ]);
+            'prenom' => 'required|max:255',
+            'sexe' => 'required|max:255',
+            'date_naissance' => 'required|max:255',
+            'lieu_naissance' => 'required|max:255',
+            'gsanguin' => 'nullable|max:255',
+            'diplome' => 'required|max:255',
+            'npi' => 'nullable|max:255',
+            'telephone' => 'required|max:255',
+            'email' => 'nullable|email|unique:users,email',
+            'profession' => 'required|max:255',
+            'commune_id' =>  'required|max:255',
+            'whatsap' => 'nullable|max:255',
+            'occupation' => 'nullable|max:255',
+            'circonscription_id' =>  'required|max:255',
+            'departement_id' => 'required|max:255',
+            'arrondissement_id' => 'required|max:255',
+            'quartier_id' => 'required|max:255',
+        ]);
  
        
        
@@ -124,7 +147,7 @@ class InscrireController extends Controller
             'arrondissement_id' => $arrondissement ? $arrondissement->id : null,
             'quartier_id' => $quartier ? $quartier->id : null,
             'circonscription_id' => $circonscriptions ? $circonscriptions->id : null,
-    ]);
+        ]);
 
         return redirect()->route('welcome')->with('success', $admin->nom . ' ' . 'Votre inscription a été Reçu avec succès');
     }

@@ -4,10 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <link rel="icon" href="/assets/img/mpa.jpeg">
-
-  <title>MPA Bénin </title>
+    <title>MUN Bénin </title>
+    
+  <link rel="icon" href="/asset/img/logo.jpg">
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -98,13 +97,6 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6 form-group mt-3">
-                  <label for="prenom" class="form-label"><b>Numéro Whatsap</b></label>
-                  <input class="form-control" name="whatsap" class='whatsap' placeholder="Pas obligatoire" required="required" type="text"  value="{{ old('whatsap') }}"/>
-                  @error('email')
-                  <div class="d-block text-danger">{{$message}}</div>
-                  @enderror
-                </div>
                 <div class="col-md-6 form-group mt-3">
                   <label for="prenom" class="form-label"><b>Pays actuel<strong style="color: #f30606ff;">*</strong></b></label>
                   <div class="col-md-6 col-sm-6">

@@ -128,7 +128,7 @@
                         <!-- Section de bienvenue -->
                         <div class="welcome-message">
                             <h3>Bienvenue, {{ auth()->user()->nom }}!</h3>
-                            <p>Nous sommes ravis de vous voir sur votre tableau de bord MPA. etc....... </p>
+                            <p>Nous sommes ravis de vous voir sur votre tableau de bord MUN. etc....... </p>
                         </div>
 
                     </div>
@@ -283,7 +283,7 @@
       <footer class="container-fluid">
         <div class="row">
           <div class="col-12 text-center">
-            &copy; 2024 Mouvement des Peuples Africains
+            &copy; 2025 Mouvement d'Unité Nationale
           </div>
         </div>
       </footer>

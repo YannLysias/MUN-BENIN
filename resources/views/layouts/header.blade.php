@@ -21,8 +21,8 @@
                 </li>
                 <li class="dropdown"><a href="#" class="nav-link {{ Route::currentRouteName() == '/inscrire/create' ? ' active' : '/diaspora/create'  }} px-0"><span>ADHERER</span> <i class="bi bi-chevron-down"></i></a>
                     <ul>
-                      <li class="nav-item me-lg-5"><a href="/inscrire/create">Local (Benin)</a></li>
-                      <li class="nav-item me-lg-5"><a href="/diaspora/create">Extérieur du pays</a></li>
+                      <li class="nav-item me-lg-5"><a href="{{ route('verifier.code.form') }}">Local (Benin)</a></li>
+                      <li class="nav-item me-lg-5"><a href="{{ route('verifier.code.diaspo') }}">Extérieur du pays</a></li>
                     </ul>
                   </li>
             </ul>

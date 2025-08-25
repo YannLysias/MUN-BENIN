@@ -162,7 +162,6 @@
                               <th>Sexe</th>
                               <th>Téléphone</th>
                               <th>Profession</th>
-                              <th>Diplome</th>
                               <th>Type</th>
                               <th>Poste</th>
                               <th>Quartier</th>
@@ -178,7 +177,6 @@
                               <td>{{ $coordonateur->sexe }}</td>
                               <td>{{ $coordonateur->telephone }}</td>
                               <td>{{ $coordonateur->profession }}</td>
-                              <td>{{ $coordonateur->diplome }}</td>
                               <td>{{ $coordonateur->type }}</td>
                               @if($coordonateur->titre)
                                 <td>{{ $coordonateur->titre->libelle }}</td>
@@ -245,10 +243,6 @@
     <!-- Custom Theme Scripts -->
 
     <script src="/build/js/custom.min.js"></script>
-
-
-
-
 
     <script>
         var index = 0;
