@@ -83,12 +83,12 @@
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
-                <h4>Email:</h4> mun-contact@benin.bj
+                <h4>Email:</h4> mouvementdesnationalistes@gmail.com
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Téléphone</h4> +229 01 6305 3905
+                <h4>Téléphone</h4> +229 01 6305 3905 | 01 9546 6050
                 <p> </p>
               </div>
 

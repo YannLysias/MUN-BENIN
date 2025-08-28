@@ -53,7 +53,7 @@
                 alert('{{ session('success') }}');
             }
         </script>
-    @endif
+        @endif
         <!-- /top navigation -->
 
         <!-- page content -->

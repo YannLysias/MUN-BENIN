@@ -261,47 +261,46 @@ class adherantController extends Controller
 
 
 
-        if($request->type=='Coordonnateur')
-            $generated_password = Str::random(8);
+        // if($request->type=='Adhérent')
+        //     $generated_password = Str::random(8);
 
-
-            $admin = User::create([
-                'nom' => $request->nom,
-                'prenom' => $request->prenom,
-                'sexe' => $request->sexe,
-                'telephone' => $request->telephone,
-                'type' =>  'Adhérent',
-                'email' => $request->email,
-                'password' => Null,
-                'date_naissance' => $request->date_naissance,
-                'lieu_naissance' => $request->lieu_naissance,
-                'gsanguin' => $request->gsanguin,
-                'diplome' => $request->diplome,
-                'profession' => $request->profession,
-                'npi' => $request->npi,
-                'active' => false,
-                'whatsap' => $request->whatsap,
-                'occupation' => $request->occupation,
-                'photo' => $path_photo_convert_to_table ? $path_photo_convert_to_table[2] : null,
-                'titre_id' => $titre ? $titre->id : null,
-                'departement_id' => $departement ? $departement->id : null,
-                'commune_id' => $commune ? $commune->id : null,
-                'arrondissement_id' => $arrondissement ? $arrondissement->id : null,
-                'quartier_id' => $quartier ? $quartier->id : null,
-                'circonscription_id' => $circonscriptions ? $circonscriptions->id : null,
+        $admin = User::create([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'sexe' => $request->sexe,
+            'telephone' => $request->telephone,
+            'type' =>  'Adhérent',
+            'email' => $request->email,
+            // 'password' => bcrypt($generated_password),
+            'date_naissance' => $request->date_naissance,
+            'lieu_naissance' => $request->lieu_naissance,
+            'gsanguin' => $request->gsanguin,
+            'diplome' => $request->diplome,
+            'profession' => $request->profession,
+            'npi' => $request->npi,
+            'active' => false,
+            'whatsap' => $request->whatsap,
+            'occupation' => $request->occupation,
+            'photo' => $path_photo_convert_to_table ? $path_photo_convert_to_table[2] : null,
+            'titre_id' => $titre ? $titre->id : null,
+            'departement_id' => $departement ? $departement->id : null,
+            'commune_id' => $commune ? $commune->id : null,
+            'arrondissement_id' => $arrondissement ? $arrondissement->id : null,
+            'quartier_id' => $quartier ? $quartier->id : null,
+            'circonscription_id' => $circonscriptions ? $circonscriptions->id : null,
         ]);
 
-        if($request->type=='Coordonnateur')
-        {
-            $admin->password = $generated_password;
-            $admin->save();
+        // if($request->type=='Adhérent')
+        // {
+        //     $admin->password = $generated_password;
+        //     $admin->save();
 
-            Notification::send($admin, new NewCollaborateur([
-                'email' => $admin->email,
-                'nom' => $admin->nom,
-                'password' => $generated_password,
-            ]));
-        }
+        //     Notification::send($admin, new NewCollaborateur([
+        //         'email' => $admin->email,
+        //         'nom' => $admin->nom,
+        //         'password' => $generated_password,
+        //     ]));
+        // }
 
         return redirect('adherant')->with('success', $admin->nom . ' ' . 'Votre inscription a été Reçu avec succès');
     }

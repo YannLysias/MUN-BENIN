@@ -190,7 +190,7 @@
                             @endif
                         </div>
                         <a href="{{ route('membre.carte', $user->id) }}" class="btn btn-primary">Générer Carte d'Adhésion</a>
-                              </div>
+                        </div>
 
                             <div class="tab-pane fade pt-3" id="profile-change-password">
                               <!-- Change Password Form -->

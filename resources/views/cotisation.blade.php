@@ -92,21 +92,29 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nom</th>
                                     <th>Numéro transaction</th>
+                                    <th>Nom</th>
+                                    <th>Prénoms</th>
                                     <th>Montant</th>
-                                    <th>Mois de Paiement</th>
-                                    <th>telephone</th>
+                                    <th>Numéro</th>
+                                    <th>Mois</th>
+                                    <th>Numéro</th>
+                                    <th>Date de paiement</th>
+                                    <th>Statut paiement</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($paiements as $paiement)
                                     <tr>
-                                        <td>{{ $paiement->user->nom }} {{ $paiement->user->prenom }}</td>
                                         <td>{{ $paiement->num_transaction }}</td>
+                                        <td>{{ $paiement->user->nom }}</td>
+                                        <td>{{ $paiement->user->prenom }}</td>
                                         <td>{{ $paiement->montant }}</td>
+                                        <td>{{ $paiement->telephone }}</td>
                                         <td>{{ $paiement->mois }}</td>
                                         <td>{{ $paiement->telephone }}</td>
+                                        <td>{{ $paiement->created_at }}</td>
+                                        <td>{{ $paiement->payment_status }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

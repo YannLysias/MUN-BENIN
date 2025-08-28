@@ -54,43 +54,43 @@ class UserController extends Controller
      * Display a listing of the resource.
      */
 
-     public function payer(Request $request)
-    {
+    // public function payer(Request $request)
+    // {
 
 
-        $request->validate([
-            'montant' => 'required|numeric',
-            'mois' => 'required|string|max:255',
-            'telephone' => 'required|string',
-            'num_transaction' => 'required|string',
-        ]);
+    //     $request->validate([
+    //         'montant' => 'required|numeric',
+    //         'mois' => 'required|string|max:255',
+    //         'telephone' => 'required|string',
+    //         'num_transaction' => 'required|string',
+    //     ]);
 
-        $fullPhoneNumber = $request['countryCode'] . $request['telephone'];
+    //     $fullPhoneNumber = $request['countryCode'] . $request['telephone'];
 
-        $paiement = new Paiement();
+    //     $paiement = new Paiement();
 
-        $paiement->user_id = auth()->id();
-        $paiement->montant = $request['montant'];
-        $paiement->mois = $request['mois'];
-        $paiement->num_transaction = $request['num_transaction'];
-        $paiement->telephone = $request['telephone'];
-        $paiement->telephone = $fullPhoneNumber;
+    //     $paiement->user_id = auth()->id();
+    //     $paiement->montant = $request['montant'];
+    //     $paiement->mois = $request['mois'];
+    //     $paiement->num_transaction = $request['num_transaction'];
+    //     $paiement->telephone = $request['telephone'];
+    //     $paiement->telephone = $fullPhoneNumber;
 
 
-        // Sauvegarder dans la base de données
-        $paiement->save();
+    //     // Sauvegarder dans la base de données
+    //     $paiement->save();
 
-    // Rediriger avec un message de succès
-    return redirect()->back()->with('success', 'Paiement réussi et enregistré !');
+    // // Rediriger avec un message de succès
+    // return redirect()->back()->with('success', 'Paiement réussi et enregistré !');
 
-        // Logique de traitement de paiement via un service de paiement
-        // Par exemple, Stripe, PayPal, etc.
-        // ...
-        return redirect()->back()->with('success', 'Paiement réussi !');
+    //     // Logique de traitement de paiement via un service de paiement
+    //     // Par exemple, Stripe, PayPal, etc.
+    //     // ...
+    //     return redirect()->back()->with('success', 'Paiement réussi !');
 
-        // Sinon, retourne une erreur
-        // return redirect()->back()->with('error', 'Erreur lors du paiement');
-    }
+    //     // Sinon, retourne une erreur
+    //     // return redirect()->back()->with('error', 'Erreur lors du paiement');
+    // }
 
     public function index()
     {
@@ -125,7 +125,6 @@ class UserController extends Controller
 
     public function coordonateurPDF()
     {
-        dd('test');
 
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
@@ -330,75 +329,70 @@ class UserController extends Controller
 
         }
 
+        // if($request->type=='Coordonnateur')
+        //     $generated_password = Str::random(8);
 
-
-        if($request->type=='Coordonnateur')
-            $generated_password = Str::random(8);
-
-
-            $admin = User::create([
-                'nom' => $request->nom,
-                'prenom' => $request->prenom,
-                'sexe' => $request->sexe,
-                'telephone' => $request->telephone,
-                'type' =>  'Coordonnateur',
-                'email' => $request->email,
-                'password' => Null,
-                'date_naissance' => $request->date_naissance,
-                'lieu_naissance' => $request->lieu_naissance,
-                'gsanguin' => $request->gsanguin,
-                'diplome' => $request->diplome,
-                'profession' => $request->profession,
-                'npi' => $request->npi,
-                'active' => false,
-                'photo' => $path_photo_convert_to_table ? $path_photo_convert_to_table[2] : null,
-                'titre_id' => $titre ? $titre->id : null,
-                'departement_id' => $departement ? $departement->id : null,
-                'commune_id' => $commune ? $commune->id : null,
-                'arrondissement_id' => $arrondissement ? $arrondissement->id : null,
-                'quartier_id' => $quartier ? $quartier->id : null,
-                'circonscription_id' => $circonscriptions ? $circonscriptions->id : null,
+        $admin = User::create([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'sexe' => $request->sexe,
+            'telephone' => $request->telephone,
+            'type' =>  'Coordonnateur',
+            'email' => $request->email,
+            // 'password' => Null,
+            'date_naissance' => $request->date_naissance,
+            'lieu_naissance' => $request->lieu_naissance,
+            'gsanguin' => $request->gsanguin,
+            'diplome' => $request->diplome,
+            'profession' => $request->profession,
+            'npi' => $request->npi,
+            'active' => false,
+            'photo' => $path_photo_convert_to_table ? $path_photo_convert_to_table[2] : null,
+            'titre_id' => $titre ? $titre->id : null,
+            'departement_id' => $departement ? $departement->id : null,
+            'commune_id' => $commune ? $commune->id : null,
+            'arrondissement_id' => $arrondissement ? $arrondissement->id : null,
+            'quartier_id' => $quartier ? $quartier->id : null,
+            'circonscription_id' => $circonscriptions ? $circonscriptions->id : null,
         ]);
 
-        if($request->type=='Coordonnateur')
-        {
-            $admin->password = $generated_password;
-            $admin->save();
+        $generated_password = Str::random(8);
+        $admin->password = $generated_password;
+        $admin->save();
 
-            Notification::send($admin, new NewCollaborateur([
-                'email' => $admin->email,
-                'nom' => $admin->nom,
-                'password' => $generated_password,
-            ]));
-        }
+        Notification::send($admin, new NewCollaborateur([
+            'email' => $admin->email,
+            'nom' => $admin->nom,
+            'password' => $generated_password,
+        ]));
 
         return redirect('coordonateur')->with('success', $admin->nom . ' ' . 'Votre inscription a été Reçu avec succès');
     }
 
-    public function validateUser($userId)
-    {
+    // public function validateUser($userId)
+    // {
 
-        $user = User::find($userId);
-        if ($user) {
+    //     $user = User::find($userId);
+    //     if ($user) {
 
-            $user->active = true;
-            $generated_password = Str::random(8);
-            $user->password = $generated_password;
-            $user->save();
+    //         $user->active = true;
+    //         $generated_password = Str::random(8);
+    //         $user->password = $generated_password;
+    //         $user->save();
 
-            if ($user->type === 'Adhérent') {
-                Notification::send($user, new NewCollaborateur([
-                    'email' => $user->email,
-                    'nom' => $user->nom,
-                    'password' => $generated_password,
-                ]));
-            }
+    //         if ($user->type === 'Adhérent') {
+    //             Notification::send($user, new NewCollaborateur([
+    //                 'email' => $user->email,
+    //                 'nom' => $user->nom,
+    //                 'password' => $generated_password,
+    //             ]));
+    //         }
 
-            return redirect()->back()->with('success', 'L\'utilisateur a été activé avec succès.');
-        }
+    //         return redirect()->back()->with('success', 'L\'utilisateur a été activé avec succès.');
+    //     }
 
-        return redirect()->back()->with('error', 'Utilisateur non trouvé.');
-    }
+    //     return redirect()->back()->with('error', 'Utilisateur non trouvé.');
+    // }
 
     /**
      * Display the specified resource.

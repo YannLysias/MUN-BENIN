@@ -164,9 +164,9 @@
 
         <!-- Photo, signature et nom de l'administrateur -->
         <div class="admin-signature">
-            <p>President</p>
-            <img src="img/admin_signature.png" alt="Signature de l'administrateur">
-            <p>Guy KPEDJO</p>
+            <p>Coordonnateur National</p>
+            <img src="img/signature.png" alt="Coordonnateur National">
+            <p>Miguel GBAGUIDI</p>
         </div>
     </div> <br>
 

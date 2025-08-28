@@ -43,7 +43,6 @@
               {{--
             <li><a href="/commentaire"><i class="fa fa-table"></i> Commentaire </a> --}}
 
-            <li><a href="/adherant"><i class="fa fa-user"></i> ADHERENTS</a></li>
             @if (auth()->check())
             <li><a href="{{ route('adherant.show', ['adherant' => auth()->user()->id]) }}"><i class="fa fa-user"></i> PROFIL</a></li>
             @endif

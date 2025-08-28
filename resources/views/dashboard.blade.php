@@ -46,7 +46,13 @@
         color: #73879C; /* Couleur du paragraphe en vert clair */
     }
 </style>
-
+@if (session('success'))
+<script>
+    window.onload = function() {
+        alert('{{ session('success') }}');
+    }
+</script>
+@endif
 <body class="nav-md">
   <div class="container body">
     <div class="main_container">
@@ -138,7 +144,7 @@
                 <div class="modal fade" id="paymentModal" tabindex="-1" role="dialog" aria-labelledby="paymentModalLabel">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
-                            <form id="paymentForm" action="{{ route('cotisation.payer') }}" method="POST">
+                            <form id="paymentForm" action="{{ route('initiate.payment') }}" method="POST">
                                 @csrf
                                 <div class="modal-header">
                                     <h4 class="modal-title" id="paymentModalLabel">Paiement de Cotisation</h4>
@@ -188,6 +194,7 @@
                                             <div class="d-block text-danger">{{$message}}</div>
                                         @enderror
                                     </div>
+
                                     <div class="form-group">
                                         <label for="paymentMethod">Méthode de Paiement :</label>
                                         <div class="d-flex justify-content-around">
@@ -201,6 +208,13 @@
                                                 <input type="radio" id="moov" name="paymentMethod" value="Moov" class="custom-control-input" >
                                                 <label class="custom-control-label" for="moov">
                                                     <img src="/img/MOOV.png" alt="Moov Money" width="50">
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="celtis" name="paymentMethod" value="Celtis" class="custom-control-input" >
+                                                <label class="custom-control-label" for="celtis">
+                                                    <img src="/img/celtis.jpg" alt="Celtis Money" width="50">
                                                 </label>
                                             </div>
                                         </div>
@@ -229,21 +243,29 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nom</th>
                                     <th>Numéro transaction</th>
+                                    <th>Nom</th>
+                                    <th>Prénoms</th>
                                     <th>Montant</th>
-                                    <th>Mois de Paiement</th>
-                                    <th>telephone</th>
+                                    <th>Numéro</th>
+                                    <th>Mois</th>
+                                    <th>Numéro</th>
+                                    <th>Date de paiement</th>
+                                    <th>Statut paiement</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach($paiements as $paiement)
                                     <tr>
+                                      <td>{{ $paiement->num_transaction }}</td>
                                         <td>{{ $paiement->user->nom }}</td>
-                                        <td>{{ $paiement->num_transaction }}</td>
+                                        <td>{{ $paiement->user->prenom }}</td>
                                         <td>{{ $paiement->montant }}</td>
+                                        <td>{{ $paiement->telephone }}</td>
                                         <td>{{ $paiement->mois }}</td>
                                         <td>{{ $paiement->telephone }}</td>
+                                        <td>{{ $paiement->created_at }}</td>
+                                        <td>{{ $paiement->payment_status }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>

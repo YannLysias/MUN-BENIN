@@ -14,6 +14,7 @@ use App\Http\Controllers\QuartierController;
 use App\Http\Controllers\TitreController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PaiementController;
 
 
 /*
@@ -58,6 +59,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/validate-user/{id}', [adherantController::class, 'validateUser'])->name('validateUser');
 
     Route::post('/payer-cotisation', [UserController::class, 'payer'])->name('cotisation.payer');
+
+
+    Route::get('/payment/callback/{id}', [PaiementController::class, 'paymentCallback'])->name('payment.callback');
+    Route::post('/payment/initiate', [PaiementController::class, 'initiatePayment'])->name('initiate.payment');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
