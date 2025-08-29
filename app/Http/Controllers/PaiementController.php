@@ -79,7 +79,7 @@ class PaiementController extends Controller
             return redirect()->back()->with('success', 'Paiement réussi.');
         } else {
             $contribution->update([
-                'payment_status' => 'failed',
+                'payment_status' => 'échoué',
             ]);
 
             return redirect()->back()->with('error', 'Paiement échoué.');
