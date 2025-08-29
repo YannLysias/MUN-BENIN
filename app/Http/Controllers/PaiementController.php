@@ -29,7 +29,7 @@ class PaiementController extends Controller
             'telephone' => $validatedData['telephone'],
             'mois' => $validatedData['mois'],
             'email' => $email,
-            'payment_status' => 'pending',
+            'payment_status' => 'En_attente',
             'status' => false,
         ]);
 
@@ -70,9 +70,9 @@ class PaiementController extends Controller
         // Récupérer la transaction depuis FedaPay
         $transaction = Transaction::retrieve($contribution->num_transaction);
 
-        if ($transaction->status == 'approved') {
+        if ($transaction->status == 'approuvé') {
             $contribution->update([
-                'payment_status' => 'approved',
+                'payment_status' => 'approuvé',
                 'status' => true,
             ]);
 
