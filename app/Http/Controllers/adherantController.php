@@ -62,15 +62,15 @@ class adherantController extends Controller
 
     public function generatePDF()
     {
-        
-        
+
+
 
         $options = new Options();
         $options->set('isHtml5ParserEnabled', true);
 
         $dompdf = new Dompdf($options);
         $dompdf->setBasePath(public_path());
-        
+
         // Récupérez l'utilisateur connecté
         $user = Auth::user();
 
@@ -324,10 +324,10 @@ class adherantController extends Controller
                 ]));
             }
 
-            return redirect()->back()->with('success', 'L\'utilisateur a été activé avec succès.');
+            return redirect()->back()->with('success', 'Le compte adhérent a été activé avec succès, ces identifiants de connection sont envoyés dans sa boite mail. Merci !');
         }
 
-        return redirect()->back()->with('error', 'Utilisateur non trouvé.');
+        return redirect()->back()->with('error', 'Adhérent non trouvé.');
     }
 
     /**

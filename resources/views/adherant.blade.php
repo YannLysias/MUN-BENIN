@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MUN Bénin </title>
-    
+
     <link rel="icon" href="/asset/img/logo.jpg">
 
     <!-- Bootstrap -->
@@ -44,6 +44,14 @@
   <!-- /menu profile quick info -->
 
   <br />
+
+    @if (session('success'))
+        <script>
+            window.onload = function() {
+                alert('{{ session('success') }}');
+            }
+        </script>
+    @endif
 
   <!-- sidebar menu -->
   @include('layouts.sidebar')

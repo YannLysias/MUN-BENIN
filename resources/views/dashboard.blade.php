@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MUN Bénin </title>
-    
+
     <link rel="icon" href="/asset/img/logo.jpg">
 
   <!-- Bootstrap -->
@@ -210,7 +210,7 @@
                                                     <img src="/img/MOOV.png" alt="Moov Money" width="50">
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="celtis" name="paymentMethod" value="Celtis" class="custom-control-input" >
                                                 <label class="custom-control-label" for="celtis">
@@ -233,12 +233,7 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#paymentModal">
                     Payer Cotisation
                 </button>
-
-
-
-
-
-                <h5 class="mt-4">Historique des Paiements :</h5>
+                <h5 class="mt-4">Historique de vos Paiements :</h5>
                     <div class="table-responsive">
                         <table class="table table-striped">
                             <thead>

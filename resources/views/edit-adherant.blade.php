@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>MUN Bénin </title>
-    
+
     <link rel="icon" href="/asset/img/logo.jpg">
 
     <!-- Bootstrap -->
@@ -196,7 +196,7 @@
                             <select id="choix" name="titre_id" value="{{$adherant->titre_id}}" class="form-control forms-control-lg">
                                 <option value="" disabled selected>Attribuer un poste</option>
                                 @foreach ($titres as $titre)
-                                <option value="{{$titre ->id}}" @selected( $adherant->id == $titre->titre_id ?  true : false)>{{$titre->libelle}}</option>
+                                <option value="{{$titre ->id}}" @selected( $titre->id == $adherant->titre_id ?  true : false)>{{$titre->libelle}}</option>
                                 @endforeach
                                 @error('titre_id')
                                 <div class="d-block text-danger">{{$message}}</div>

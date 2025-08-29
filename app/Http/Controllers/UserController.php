@@ -515,6 +515,6 @@ class UserController extends Controller
             $coordonateur->save();
         }
 
-        return redirect()->route('adherant.index')->with('success', 'Modifier avec success');
+        return redirect('coordonateur')->with('success', 'Modifications effectuées avec succès');
     }
 }
